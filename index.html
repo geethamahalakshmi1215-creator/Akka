@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A special birthday surprise for Akka — Happy 27th Birthday from Geetha">
+  <title>Happy 27th Birthday Akka ❤️ | From Geetha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loading-screen" class="loading-screen" aria-live="polite">
+    <div class="loading-heart">
+      <div class="heart-pulse"></div>
+      <div class="heart-pulse heart-pulse--delay"></div>
+      <span class="heart-icon" aria-hidden="true">❤️</span>
+    </div>
+    <p class="loading-text">A Special Surprise For My Akka ❤️</p>
+    <div class="loading-bar"><div class="loading-bar__fill"></div></div>
+  </div>
+
+  <!-- Floating hearts container (populated by JS) -->
+  <div id="floating-hearts" class="floating-hearts" aria-hidden="true"></div>
+
+  <!-- Sparkle overlay -->
+  <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+
+  <!-- Confetti canvas -->
+  <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== FLOATING MUSIC PLAYER ========== -->
+  <!-- Replace src with your own birthday song file (e.g. music/birthday-song.mp3) -->
+  <div id="music-player" class="music-player" aria-label="Background music player">
+    <audio id="birthday-audio" loop preload="auto">
+      <source src="music/birthday-song.mp3" type="audio/mpeg">
+      <!-- Fallback: browser will show controls if file missing -->
+    </audio>
+    <button id="music-toggle" class="music-player__btn" aria-label="Play or pause music">
+      <span class="music-icon music-icon--play">🎵</span>
+      <span class="music-icon music-icon--pause hidden">⏸️</span>
+    </button>
+    <span class="music-player__label">For My Akka</span>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__brand">Akka's Day ✨</div>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#timeline">Journey</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#messages">Messages</a></li>
+      <li><a href="#letter">Letter</a></li>
+      <li><a href="#wishes">Wishes</a></li>
+      <li><a href="#finale">Celebrate</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="main-content hidden">
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="hero section">
+      <div class="hero__bg"></div>
+      <div class="hero__balloons" aria-hidden="true">
+        <span class="balloon balloon--1">🎈</span>
+        <span class="balloon balloon--2">🎈</span>
+        <span class="balloon balloon--3">🎈</span>
+        <span class="balloon balloon--4">🎈</span>
+        <span class="balloon balloon--5">🎈</span>
+      </div>
+      <div class="hero__content glass-card">
+        <p class="hero__from">With all my love, from Geetha 💖</p>
+        <h1 class="hero__title">
+          <span class="hero__title-line">Happy 27th Birthday</span>
+          <span class="hero__title-name">Akka 🎂</span>
+        </h1>
+        <p class="hero__subtitle">Today we celebrate the most wonderful Akka in the world</p>
+        <div class="hero__cake" aria-hidden="true">
+          <div class="cake">
+            <div class="cake__candle"><span class="cake__flame"></span></div>
+            <div class="cake__layer cake__layer--top"></div>
+            <div class="cake__layer cake__layer--mid"></div>
+            <div class="cake__layer cake__layer--bottom"></div>
+          </div>
+        </div>
+        <a href="#about" class="btn btn--gold" id="enter-celebration">Enter Celebration ✨</a>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT MY AKKA ========== -->
+    <section id="about" class="about section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Who You Are</span>
+          <h2 class="section-title">About My Akka</h2>
+          <p class="section-desc">The beautiful qualities that make you so special to me</p>
+        </header>
+        <div class="about-grid">
+          <article class="about-card glass-card" data-aos>
+            <span class="about-card__icon">❤️</span>
+            <h3>Kind-hearted</h3>
+            <p>Your heart is pure gold, Akka — always giving, always caring.</p>
+          </article>
+          <article class="about-card glass-card" data-aos>
+            <span class="about-card__icon">🤗</span>
+            <h3>Caring</h3>
+            <p>You wrap everyone around you in warmth and genuine love.</p>
+          </article>
+          <article class="about-card glass-card" data-aos>
+            <span class="about-card__icon">💪</span>
+            <h3>Strong</h3>
+            <p>Your strength inspires me — you face life with courage and grace.</p>
+          </article>
+          <article class="about-card glass-card" data-aos>
+            <span class="about-card__icon">✨</span>
+            <h3>Inspiring</h3>
+            <p>You light the way for everyone lucky enough to know you.</p>
+          </article>
+          <article class="about-card glass-card" data-aos>
+            <span class="about-card__icon">🌸</span>
+            <h3>Supportive</h3>
+            <p>Through every high and low, you've been my steady anchor.</p>
+          </article>
+          <article class="about-card glass-card" data-aos>
+            <span class="about-card__icon">💖</span>
+            <h3>Beautiful Soul</h3>
+            <p>Your inner beauty shines brighter than anything in this world.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TIMELINE ========== -->
+    <section id="timeline" class="timeline section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Your Story</span>
+          <h2 class="section-title">Beautiful Journey Timeline</h2>
+          <p class="section-desc">Every chapter of your life has been worth celebrating</p>
+        </header>
+        <div class="timeline-track">
+          <div class="timeline-item glass-card" data-aos>
+            <span class="timeline-item__icon">👶</span>
+            <div class="timeline-item__content">
+              <h3>Childhood</h3>
+              <p>Where your beautiful journey began — full of innocence and wonder.</p>
+            </div>
+          </div>
+          <div class="timeline-item glass-card" data-aos>
+            <span class="timeline-item__icon">🎒</span>
+            <div class="timeline-item__content">
+              <h3>School Days</h3>
+              <p>Learning, growing, and becoming the amazing person you are today.</p>
+            </div>
+          </div>
+          <div class="timeline-item glass-card" data-aos>
+            <span class="timeline-item__icon">🎓</span>
+            <div class="timeline-item__content">
+              <h3>College Life</h3>
+              <p>Discovering your dreams and building the foundation of your future.</p>
+            </div>
+          </div>
+          <div class="timeline-item glass-card" data-aos>
+            <span class="timeline-item__icon">💼</span>
+            <div class="timeline-item__content">
+              <h3>Career Journey</h3>
+              <p>Conquering challenges and shining in everything you pursue.</p>
+            </div>
+          </div>
+          <div class="timeline-item glass-card" data-aos>
+            <span class="timeline-item__icon">🌟</span>
+            <div class="timeline-item__content">
+              <h3>Present Day</h3>
+              <p>Standing tall as the incredible Akka I admire and adore.</p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-item--highlight glass-card" data-aos>
+            <span class="timeline-item__icon">🎂</span>
+            <div class="timeline-item__content">
+              <h3>Celebrating 27 Wonderful Years</h3>
+              <p>Today we honor every moment that brought you here — and all the magic still to come.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PHOTO GALLERY ========== -->
+    <!--
+      EASY PHOTO REPLACEMENT:
+      Replace each src below with your own images.
+      Example: src="images/akka1.jpg"
+      Keep the alt text descriptive for accessibility.
+    -->
+    <section id="gallery" class="gallery section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Precious Moments</span>
+          <h2 class="section-title">Photo Gallery</h2>
+          <p class="section-desc">Memories that make my heart smile</p>
+        </header>
+        <div class="gallery-grid">
+          <figure class="gallery-item" data-aos tabindex="0" role="button" aria-label="View photo 1">
+            <img src="images/photo1.jpg" alt="A beautiful memory with Akka" loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/f8bbd9/880e4f?text=Photo+1'">
+            <figcaption class="gallery-item__overlay"><span>View ✨</span></figcaption>
+          </figure>
+          <figure class="gallery-item" data-aos tabindex="0" role="button" aria-label="View photo 2">
+            <img src="images/photo2.jpg" alt="A cherished moment with Akka" loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/e1bee7/4a148c?text=Photo+2'">
+            <figcaption class="gallery-item__overlay"><span>View ✨</span></figcaption>
+          </figure>
+          <figure class="gallery-item" data-aos tabindex="0" role="button" aria-label="View photo 3">
+            <img src="images/photo3.jpg" alt="Happy times with Akka" loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/fff9c4/f9a825?text=Photo+3'">
+            <figcaption class="gallery-item__overlay"><span>View ✨</span></figcaption>
+          </figure>
+          <figure class="gallery-item" data-aos tabindex="0" role="button" aria-label="View photo 4">
+            <img src="images/photo4.jpg" alt="Smiles shared with Akka" loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/fce4ec/ad1457?text=Photo+4'">
+            <figcaption class="gallery-item__overlay"><span>View ✨</span></figcaption>
+          </figure>
+          <figure class="gallery-item" data-aos tabindex="0" role="button" aria-label="View photo 5">
+            <img src="images/photo5.jpg" alt="Special memory with Akka" loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/f3e5f5/6a1b9a?text=Photo+5'">
+            <figcaption class="gallery-item__overlay"><span>View ✨</span></figcaption>
+          </figure>
+          <figure class="gallery-item gallery-item--wide" data-aos tabindex="0" role="button" aria-label="View photo 6">
+            <img src="images/photo6.jpg" alt="A favorite memory with Akka" loading="lazy"
+                 onerror="this.src='https://placehold.co/1200x600/f8bbd9/880e4f?text=Photo+6'">
+            <figcaption class="gallery-item__overlay"><span>View ✨</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+      <img class="lightbox__img" id="lightbox-img" src="" alt="Gallery photo">
+      <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
+
+    <!-- ========== 27 SPECIAL MESSAGES ========== -->
+    <section id="messages" class="messages section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">From My Heart</span>
+          <h2 class="section-title">27 Special Messages For My Akka</h2>
+          <p class="section-desc">One message for each year of your beautiful life</p>
+        </header>
+        <div class="messages-grid" id="messages-grid">
+          <!-- Cards generated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EMOTIONAL LETTER ========== -->
+    <section id="letter" class="letter section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">A Letter</span>
+          <h2 class="section-title">To My Beloved Akka</h2>
+        </header>
+        <div class="letter-card glass-card">
+          <div class="letter-card__seal" aria-hidden="true">💌</div>
+          <div id="typewriter" class="typewriter" aria-live="polite"></div>
+          <button id="replay-letter" class="btn btn--outline">Read Again 💖</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WISHES SECTION ========== -->
+    <section id="wishes" class="wishes section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Birthday Wishes</span>
+          <h2 class="section-title">My Wishes For You, Akka</h2>
+          <p class="section-desc">May every dream come true</p>
+        </header>
+        <div class="wishes-grid">
+          <article class="wish-card glass-card" data-aos>
+            <span class="wish-card__emoji">🌟</span>
+            <p>May success follow you wherever you go, Akka.</p>
+          </article>
+          <article class="wish-card glass-card" data-aos>
+            <span class="wish-card__emoji">💕</span>
+            <p>May love surround you today and always.</p>
+          </article>
+          <article class="wish-card glass-card" data-aos>
+            <span class="wish-card__emoji">🌈</span>
+            <p>May every day bring new reasons to smile.</p>
+          </article>
+          <article class="wish-card glass-card" data-aos>
+            <span class="wish-card__emoji">🕊️</span>
+            <p>May peace fill your heart and calm your mind.</p>
+          </article>
+          <article class="wish-card glass-card" data-aos>
+            <span class="wish-card__emoji">🌺</span>
+            <p>May good health and happiness be yours forever.</p>
+          </article>
+          <article class="wish-card glass-card" data-aos>
+            <span class="wish-card__emoji">✨</span>
+            <p>May all your dreams turn into beautiful reality.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CELEBRATION FINALE ========== -->
+    <section id="finale" class="finale section">
+      <canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
+      <div class="container finale__content">
+        <div class="finale__cake" aria-hidden="true">
+          <div class="cake cake--large">
+            <div class="cake__candle"><span class="cake__flame"></span></div>
+            <div class="cake__layer cake__layer--top"></div>
+            <div class="cake__layer cake__layer--mid"></div>
+            <div class="cake__layer cake__layer--bottom"></div>
+          </div>
+        </div>
+        <div class="finale-message glass-card">
+          <h2 class="finale-message__title">To My Dearest Akka,</h2>
+          <div class="finale-message__body">
+            <p>Thank you for being part of my life.</p>
+            <p>Thank you for every smile,<br>every memory,<br>every lesson,<br>and every moment of support.</p>
+            <p>You may not be my blood sister,<br>but you will always be my Akka.</p>
+            <p>I wish you happiness,<br>success,<br>good health,<br>peace,<br>and endless reasons to smile.</p>
+            <p class="finale-message__highlight">Happy 27th Birthday Akka ❤️</p>
+            <p class="finale-message__sign">Forever grateful,<br><strong>Geetha ❤️</strong></p>
+          </div>
+          <button id="celebrate-btn" class="btn btn--gold btn--pulse">🎉 Celebrate Again!</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with endless love for my Akka 💖</p>
+      <p class="footer__sub">— Geetha, 2026 —</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
